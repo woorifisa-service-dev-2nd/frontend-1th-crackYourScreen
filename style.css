@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    width: 20em;
+    height: 20em;
+    }
+
+
+    #introImg {
+        filter: brightness(50%);
+        height: 100%;
+        width: 100%;
+        background-image: url(block1.jpg);
+        background-image: url(block2.jpg);
+        background-image: url(block3.jpg);
+        background-image: url(glass1.jpg);
+        background-image: url(glass2.jpg);
+        background-image: url(glass3.jpg);
+        position: absolute;
+    }
+    
+    #background {
+        position: relative;
+    }
+    
+    #reset-btn {
+        padding: 20px 30px;
+        font-size: 30px;
+        position: absolute;
+        top: 50px;
+        left: 1700px;
+    }
+
+    body {
+        overflow: hidden;
+    }
