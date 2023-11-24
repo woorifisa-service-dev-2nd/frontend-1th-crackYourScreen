@@ -4,19 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script defer src="app.js"></script>
+    <title>Screen Breaker</title>
+    <script defer src="js/button.js" type="module"></script>
+    <script defer src="js/crack.js"></script>
+    <script defer src="js/mouse.js"></script>
+    <script defer src="js/screen.js" type="module"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main id="background">
+    <main>
         <img id="introImg">
-        <button id="reset-btn">RESET</button>
-        <button id="change-pointer">
-            <img src="mouse-pointer/simple-hammer.png">
-            망치 바꾸기
-        </button>
+        <div id="btn-wrap">
+            <button id="change-pointer" class="btn">
+                <img src="images/mouse-pointer/simple-hammer.png">
+                NEW HAMMER
+            </button>
+            <div class="right-btns">
+                <button id="reset-btn" class="btn">RESET</button>
+                <label for="input-image" id="upload-btn" class="btn">UPLOAD</label>
+                <input type="file" id="input-image"></input>
+            </div>
+        </div>
         <div id="where">wherepixel</div>
     </main>
 </body>
