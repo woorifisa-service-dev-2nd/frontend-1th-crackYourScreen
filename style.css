@@ -2,3 +2,35 @@
     display: flex;
     align-items: center;
 }
+
+#introImg {
+    filter: brightness(50%);
+    height: 100%;
+    width: 100%;
+    background-image: url(block1.jpg);
+    background-image: url(block2.jpg);
+    background-image: url(block3.jpg);
+    background-image: url(glass1.jpg);
+    background-image: url(glass2.jpg);
+    background-image: url(glass3.jpg);
+    background-image: url(code1.png);
+    background-image: url(code2.jpg);
+    position: absolute;
+}
+
+#background {
+    position: relative;
+}
+
+#reset-btn {
+    padding: 20px 30px;
+    font-size: 30px;
+    position: absolute;
+    top: 50px;
+    left: 1700px;
+}
+
+body {
+    margin: 0px;
+    overflow: hidden;
+}
