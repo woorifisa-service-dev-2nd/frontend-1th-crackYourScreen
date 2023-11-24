@@ -1,19 +1,4 @@
-/* 
-html:hover {
-    cursor: url(mouse-pointer/simple-hammer.png), pointer;
-    /* transform:rotate(40deg) : 이미지 회전 시 필요*/
-/*이미지의 최대 사이즈는 108px 입니다.*/
-
-
 #change-pointer {
     display: flex;
     align-items: center;
-}
-
-#test{
-    /* transform: rotate(0deg); simple*/
-    /* transform: rotate(25deg); real*/
-    /* transform: rotate(25deg); wood*/
-    transform: rotate(deg);
-    /* transform: ; */
 }

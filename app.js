@@ -2,7 +2,7 @@
 const changePointerBtn = document.getElementById('change-pointer');
 /**마우스 호버 CSS 초기화 */
 document.styleSheets[0].insertRule('html,button:hover{cursor : url(mouse-pointer/simple-hammer.png), pointer}', 0);
-//console.log(document.styleSheets[0].cssRules[0]);
+
 
 
 
