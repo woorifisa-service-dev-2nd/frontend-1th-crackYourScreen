@@ -1,3 +1,8 @@
+
+
+
+
+
 #change-pointer {
     display: flex;
     align-items: center;
@@ -15,17 +20,13 @@
     background-image: url(glass3.jpg);
     background-image: url(code1.png);
     background-image: url(code2.jpg);
-    position: absolute;
+    
 }
 
-#background {
-    position: relative;
-}
 
 #reset-btn {
     padding: 20px 30px;
     font-size: 30px;
-    position: absolute;
     top: 50px;
     left: 1700px;
 }
