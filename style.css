@@ -10,7 +10,10 @@ html:hover {
     align-items: center;
 }
 
-/* #pointer{
-    transform: rotate(270deg);
-    transform: scaleX(-1);
-} */
+#test{
+    /* transform: rotate(0deg); simple*/
+    /* transform: rotate(25deg); real*/
+    /* transform: rotate(25deg); wood*/
+    transform: rotate(deg);
+    /* transform: ; */
+}
