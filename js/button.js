@@ -1,9 +1,8 @@
 import {showImage} from './screen.js';
 
-const ALLOW_EXTENSIONS_LOWER_CASE = ['jpg', 'jpeg', 'png', 'gif'];
 
 const resetBtn = document.getElementById('reset-btn');
-const selectBtn = document.getElementById('input-image');
+const inputImage = document.getElementById('input-image');
 
 
 /**
@@ -22,12 +21,13 @@ resetBtn.addEventListener('click', () => {
  * SELECT 버튼 이미지 선택 이벤트핸들러
  * crack 제거 및 선택한 배경화면으로 변경
  */
-selectBtn.onchange = () => {
-    const selectFiles = selectBtn.files;
 
-    // 파일 예외처리
+inputImage.addEventListener('change', (e) => {
+    const selectFiles = inputImage.files;
+    
+    // 파일 유효성 확인
     checkValidation(selectFiles);
-
+    
     const imageFile = selectFiles[0];
     
     // 배경화면 변경
@@ -35,7 +35,9 @@ selectBtn.onchange = () => {
     
     // crack 제거
     removeCracks();
-}
+    
+    e.target.value = '';
+});
 
 /**
  * crack image 제거
@@ -53,22 +55,25 @@ function removeCracks() {
 }
 
 /**
- * 파일 수, 확장자 유효성 검사
+ * 파일 수, 확장자 유효성 확인
  * @param {FileList} files 
  */
 function checkValidation(files) {
-    // 파일 수 예외처리
     if (files.length != 1) {
-        alert('하나의 이미지 파일을 선택하세요');
+        alert('하나의 파일을 선택하세요.');
+        return;
     }
- 
-    const imageFile = files[0];
-    const extension = imageFile.type.split('/').pop().toLowerCase();
+    
+    const ALLOW_EXTENSIONS_LOWER_CASE = ['jpg', 'jpeg', 'png', 'gif'];
+    
+    const file = files[0];
+    const extension = file.type.split('/').pop().toLowerCase();
      
-    // 파일 확장자 예외처리
-    if (!ALLOW_EXTENSIONS_LOWER_CASE.includes(extension)) {
-        alert(ALLOW_EXTENSIONS_LOWER_CASE.join(",") + ' 만 가능!');
+    if (ALLOW_EXTENSIONS_LOWER_CASE.includes(extension)) {
+        return;
     }
+    
+    alert(`지원하는 확장자(${ALLOW_EXTENSIONS_LOWER_CASE.join(", ")})가 아닙니다.`);
 }
 
 /**
