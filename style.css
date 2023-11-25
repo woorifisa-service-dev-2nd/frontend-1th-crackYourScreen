@@ -16,7 +16,6 @@ main {
     position : relative;
 }
 
-
 #introImg {
     filter: brightness(50%);
     height: 100%;
@@ -25,11 +24,10 @@ main {
 
 #btn-wrap {
     position: absolute;
-    top: 85px;
+    top: 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* border:1px solid red; */
 }
 
 #change-pointer {
