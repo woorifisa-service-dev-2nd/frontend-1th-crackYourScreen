@@ -21,7 +21,6 @@ resetBtn.addEventListener('click', () => {
  * SELECT 버튼 이미지 선택 이벤트핸들러
  * crack 제거 및 선택한 배경화면으로 변경
  */
-
 inputImage.addEventListener('change', (e) => {
     const selectFiles = inputImage.files;
     
