@@ -1,10 +1,7 @@
 /**DOM */
 const changePointerBtn = document.getElementById('change-pointer');
-/**마우스 호버 CSS 초기화 */
-document.styleSheets[0].insertRule('html,button,.btn:hover{cursor : url(images/mouse-pointer/simple-hammer.png), pointer}', 0);
-
-
-
+const cursor = document.querySelector('.custom-cursor');
+const cursorImg = cursor.querySelector('img');
 
 /************마우스 커서 바꾸기 버튼 이벤트 콜백 함수 *********************/
 /** 마우스 커서 바꾸기
@@ -15,10 +12,10 @@ let changePointerCounter = 1;
 const changePointer = () => {
     /**0.CSS value */
     const pointerNameList = [
-        { url: `url(images/mouse-pointer/simple-hammer.png), pointer`, deg: `rotate(deg: 0)` },
-        { url: `url(images/mouse-pointer/real-hammer.png), pointer`, deg: `rotate(deg: 25)` },
-        { url: `url(images/mouse-pointer/wood-hammer.png), pointer`, deg: `rotate(deg: 25)` },
-        { url: `url(images/mouse-pointer/yellow-hammer.png), pointer`, deg: `rotate(deg: 0)` },
+        { url: `images/mouse-pointer/simple-hammer.png`, deg: `rotate(0deg)` },
+        { url: `images/mouse-pointer/real-hammer.png`  , deg: `rotate(25deg)` },
+        { url: `images/mouse-pointer/wood-hammer.png`  , deg: `rotate(25deg)` },
+        { url: `images/mouse-pointer/yellow-hammer.png`, deg: `rotate(0deg)` }
     ];
 
     /** 1. 순차로 pointerNameList에서 css값 변수를 가져오는 함수
@@ -34,21 +31,20 @@ const changePointer = () => {
     }
 
     //getPointer()-순차 OR getPointerRandom()-랜덤
-
-    const val = getPointer();
-    document.styleSheets[0].deleteRule(0);//생성할때 만들어진 CSS 객체를 삭제
-    document.styleSheets[0].insertRule( //다시 생성
-        `html,button,.btn:hover{
-            cursor : ${val.url};
-            transform: ${val.deg};
-        }`, 0);
-    //document.styleSheets[0].cssRules[0].style.cursor = val;
-    console.log(document.styleSheets[0].cssRules[0]);
+    let val = getPointer();
+    cursorImg.src = val.url;
+    cursorImg.style.transform = val.deg;
     return;
 }
-
-
 /************마우스 커서 바꾸기 버튼 이벤트 콜백 함수 (끝) *********************/
-
-/**Event */
+// Event
 changePointerBtn.addEventListener('click', changePointer);
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.pageX + 'px';
+    cursor.style.top = e.pageY + 'px';
+    cursorImg.style.display = 'inline';
+});
+
+document.addEventListener('mouseleave', () => {
+    cursorImg.style.display = 'none';
+});
