@@ -16,7 +16,7 @@ function insertImageOneClickCenter(event) {
     const imageSize = 300; // 예: 이미지 크기를 50x50으로 설정
 
     // 이미지의 중앙 위치 계산
-    const imageX = clickX - imageSize / 2 -50;
+    const imageX = clickX - imageSize / 2 - 50;
     const imageY = clickY - imageSize / 2 + 50;
 
     // 이미지의 위치와 스타일을 설정합니다.
@@ -73,12 +73,12 @@ document.addEventListener('dblclick', insertImageTwoClickCenter);
 
 //boom!! 
 
-document.addEventListener('click', () => {
+document.addEventListener('click', (event) => {
     if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer') {
         return;
     }
     
-    // 현재 글자 크기 가져오기
+    // 글자 넣어주기
     document.getElementById('boomText1').innerHTML = 'bang!!!';
     boomText1.style.display = 'block'; //숨겼던 글자 다시 나오게 하기
     
@@ -95,21 +95,23 @@ document.addEventListener('click', () => {
         boomText1.style.fontSize = '50px'; // 원래 크기로 설정
     }, 200);
 
-    // 2초 후에 글자 숨기기
+    // 1초 후에 글자 숨기기
     setTimeout(() => {
         boomText1.style.display = 'none'; // 글자 숨기기
     }, 1000);
+
+    
 
 
     
 });
 
-document.addEventListener('dblclick', () => {
+document.addEventListener('dblclick', (event) => {
     if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer') {
         return;
     }
     
-    // 현재 글자 크기 가져오기
+    // 글자 넣어주기
     document.getElementById('boomText2').innerHTML = 'BANG!!!';
     boomText2.style.display = 'block'; //숨겼던 글자 다시 나오게 하기
     
@@ -126,7 +128,7 @@ document.addEventListener('dblclick', () => {
         boomText2.style.fontSize = '100px'; // 원래 크기로 설정
     }, 200);
 
-    // 2초 후에 글자 숨기기
+    // 1초 후에 글자 숨기기
     setTimeout(() => {
         boomText2.style.display = 'none'; // 글자 숨기기
     }, 1000);
