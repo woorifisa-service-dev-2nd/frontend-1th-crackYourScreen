@@ -1,9 +1,10 @@
 // 화면을 클릭할 때 실행되는 함수
 function insertImageOneClickCenter(event) {
-    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer') {
+    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer' ||
+       event.target.id === 'select-btn' || event.target.id === 'input-image') {
         return;
     }
-    
+
     // 클릭한 위치의 좌표를 가져옵니다.
     const clickX = event.clientX;
     const clickY = event.clientY;
@@ -33,7 +34,8 @@ function insertImageOneClickCenter(event) {
 }
 
 function insertImageTwoClickCenter(event) {
-    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer') {
+    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer' ||
+       event.target.id === 'select-btn' || event.target.id === 'input-image') {
         return;
     }
 
@@ -74,7 +76,8 @@ document.addEventListener('dblclick', insertImageTwoClickCenter);
 //boom!! 
 
 document.addEventListener('click', (event) => {
-    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer') {
+    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer' ||
+       event.target.id === 'select-btn' || event.target.id === 'input-image') {
         return;
     }
     
@@ -107,7 +110,8 @@ document.addEventListener('click', (event) => {
 });
 
 document.addEventListener('dblclick', (event) => {
-    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer') {
+    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer' ||
+       event.target.id === 'select-btn' || event.target.id === 'input-image') {
         return;
     }
     
