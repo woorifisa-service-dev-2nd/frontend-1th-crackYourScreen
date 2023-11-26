@@ -13,7 +13,7 @@ function insertImageOneClickCenter(event) {
     image.src ='images/crack/cracked-glass-(1).png';
 
     // 이미지의 크기를 설정합니다. 원하는 크기로 변경하세요.
-    const imageSize = 500; // 예: 이미지 크기를 50x50으로 설정
+    const imageSize = 300; // 예: 이미지 크기를 50x50으로 설정
 
     // 이미지의 중앙 위치 계산
     const imageX = clickX - imageSize / 2 -50;
@@ -68,7 +68,7 @@ function insertImageTwoClickCenter(event) {
 // 화면을 클릭할 때 insertImageAtClickCenter 함수를 호출합니다.
 document.addEventListener('click', insertImageOneClickCenter);
 document.addEventListener('dblclick', insertImageTwoClickCenter);
-let isAnimating = false; // 애니메이션이 진행 중인지 여부를 나타내는 플래그
+
 
 
 //boom!! 
