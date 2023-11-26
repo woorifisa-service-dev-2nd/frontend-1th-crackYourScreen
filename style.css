@@ -23,7 +23,7 @@ main {
     width: 100%;
 }
 
-#btn-wrap {
+#crack {
     position: absolute;
     top: 20px;
     width: 100%;
@@ -67,7 +67,7 @@ main {
     display: none;
 }
 
-.boom-text1 {
+#boomText1 {
     font-size: 50px;
     transition: transform 0.2s ease;
     position: absolute;
@@ -76,7 +76,7 @@ main {
     color: deeppink;
 }
 
-.boom-text2 {
+#boomText2 {
     font-size: 100px;
     transition: transform 0.2s ease;
     position: absolute;
