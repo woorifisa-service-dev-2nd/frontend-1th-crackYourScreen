@@ -74,6 +74,9 @@ document.addEventListener('dblclick', insertImageTwoClickCenter);
 //boom!! 
 
 document.addEventListener('click', () => {
+    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer') {
+        return;
+    }
     
     // 현재 글자 크기 가져오기
     document.getElementById('boomText1').innerHTML = 'bang!!!';
@@ -102,6 +105,9 @@ document.addEventListener('click', () => {
 });
 
 document.addEventListener('dblclick', () => {
+    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer') {
+        return;
+    }
     
     // 현재 글자 크기 가져오기
     document.getElementById('boomText2').innerHTML = 'BANG!!!';
