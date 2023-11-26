@@ -68,3 +68,62 @@ function insertImageTwoClickCenter(event) {
 // 화면을 클릭할 때 insertImageAtClickCenter 함수를 호출합니다.
 document.addEventListener('click', insertImageOneClickCenter);
 document.addEventListener('dblclick', insertImageTwoClickCenter);
+let isAnimating = false; // 애니메이션이 진행 중인지 여부를 나타내는 플래그
+
+
+//boom!! 
+
+document.addEventListener('click', () => {
+    
+    // 현재 글자 크기 가져오기
+    document.getElementById('boomText1').innerHTML = 'bang!!!';
+    boomText1.style.display = 'block'; //숨겼던 글자 다시 나오게 하기
+    
+    const currentSize = window.getComputedStyle(boomText1, null).getPropertyValue('font-size');
+    
+    // 현재 크기를 숫자로 변환하고 1.2배로 증가시킴
+    const newSize = (parseFloat(currentSize) * 1.2) + 'px';
+
+    // 글자 크기 변경
+    boomText1.style.fontSize = newSize;
+
+    // 0.2초 후에 다시 원래 크기로 돌아가기
+    setTimeout(() => {
+        boomText1.style.fontSize = '50px'; // 원래 크기로 설정
+    }, 200);
+
+    // 2초 후에 글자 숨기기
+    setTimeout(() => {
+        boomText1.style.display = 'none'; // 글자 숨기기
+    }, 1000);
+
+
+    
+});
+
+document.addEventListener('dblclick', () => {
+    
+    // 현재 글자 크기 가져오기
+    document.getElementById('boomText2').innerHTML = 'BANG!!!';
+    boomText2.style.display = 'block'; //숨겼던 글자 다시 나오게 하기
+    
+    const currentSize = window.getComputedStyle(boomText2, null).getPropertyValue('font-size');
+    
+    // 현재 크기를 숫자로 변환하고 1.2배로 증가시킴
+    const newSize = (parseFloat(currentSize) * 1.2) + 'px';
+
+    // 글자 크기 변경
+    boomText2.style.fontSize = newSize;
+
+    // 0.2초 후에 다시 원래 크기로 돌아가기
+    setTimeout(() => {
+        boomText2.style.fontSize = '100px'; // 원래 크기로 설정
+    }, 200);
+
+    // 2초 후에 글자 숨기기
+    setTimeout(() => {
+        boomText2.style.display = 'none'; // 글자 숨기기
+    }, 1000);
+
+    
+});

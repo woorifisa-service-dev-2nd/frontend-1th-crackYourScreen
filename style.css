@@ -1,4 +1,5 @@
 * {
+    font-family: 'Bagel Fat One';
     margin: 0;
     padding: 0;
 }
@@ -64,4 +65,22 @@ main {
 
 #input-image {
     display: none;
+}
+
+.boom-text1 {
+    font-size: 50px;
+    transition: transform 0.2s ease;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: deeppink;
+}
+
+.boom-text2 {
+    font-size: 100px;
+    transition: transform 0.2s ease;
+    position: absolute;
+    bottom: 100px;
+    left: 50px;
+    color: deeppink;
 }
