@@ -26,7 +26,6 @@ const changePointer = () => {
         if (changePointerCounter === pointerNameList.length) {
             changePointerCounter = 0;
         }
-        console.log(changePointerCounter);
         return pointerNameList[changePointerCounter++];
     }
 

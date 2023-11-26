@@ -13,7 +13,7 @@ images[6]="images/glass/glass2.jpg";
 images[7]="images/glass/glass3.jpg";
 
 
-console.log(images);
+//console.log(images);
 
 export function showImage() {
     let imgNum = Math.floor(Math.random()*images.length);
