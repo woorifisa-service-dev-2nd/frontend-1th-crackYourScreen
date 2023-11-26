@@ -1,6 +1,6 @@
 // 화면을 클릭할 때 실행되는 함수
 function insertImageOneClickCenter(event) {
-    if(event.target.id === 'reset-btn') {
+    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer') {
         return;
     }
     
@@ -33,7 +33,7 @@ function insertImageOneClickCenter(event) {
 }
 
 function insertImageTwoClickCenter(event) {
-    if(event.target.id === 'reset-btn') {
+    if(event.target.id === 'reset-btn' || event.target.id === 'change-pointer') {
         return;
     }
 
