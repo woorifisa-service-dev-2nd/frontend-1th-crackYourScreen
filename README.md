@@ -103,12 +103,14 @@ input 태그에서 사용자가 선택한 파일을 ``File`` 객체로 가져와
 *이때 reset button과 new 버튼을 눌릴 시 발생하지 않게끔 if 문을 활용했습니다.
 
 2. 클릭한 좌표를 가져오고 기존 이미지의 위치는 클릭 위치의 오른쪽 아래에 있습니다. 그래서 마우스 좌표와 - img 절반 크기를 가로와 세로로 각각 빼주어 이미지가 중앙에 오게 만드는 준비를 합니다.
+
 ex)
 const imageX = clickX - imageSize / 2 - 50;
 const imageY = clickY - imageSize / 2 + 50;
 이때 +- 50은 그림 형태에 따라 정확도를  높이기 위해 넣어준 값입니다.
 
 3. 우선 image의 객체를 구하고 스타일에 위에서 구한 imageX와 imageY를 대입하여 버튼 클릭시 이미지 삽입 위치를 설정해줍니다.
+
 ex)
 image.style.position = 'absolute';
 image.style.left = `${imageX}px`;
@@ -126,14 +128,17 @@ image.style.height = `${imageSize}px`;
 //Bang 설정
 
 1. getElentId로 boomText1 선택자를 가져옵니다. 그다음 innerHTML을 활용해서 bang!!! 이라는 단어를 추가합니다.
+
 ex)
 document.getElementById('boomText1').innerHTML = 'bang!!!';
 
 2. 그리고 기존 설정해뒀던 bang의 크기를 1.2배 증가시키는 작업을 합니다.
+
 ex)
 onst newSize = (parseFloat(currentSize) * 1.2) + 'px'; 이를 활용해서 원래 크기에 1.2배를 합니다.
 
 3.그 다음 원래 크기로 바꾸는 작업을 합니다. 이때 함수에 두 개의 인수를 줘서 진행하는데 하나는 원래 크기로 돌아가기 위한 설정 값이고 또 다른 값은 돌아가기 까지의 시간을 의미합니다. 원래 크기는     50px로 설정했고 200ms시간으로 설정했기 때문에 0.2초 후에 원래 크기 50px가 됩니다.
+
 ex)
 setTimeout(() => {
         boomText1.style.fontSize = '50px'; // 원래 크기로 설정
@@ -141,12 +146,14 @@ setTimeout(() => {
 200은 200ms이므로 0.2초만 커졌다가 작아진다.
 
 4. 그 다음 글자를 없애기 위해 글자 숨김을 진행하는데 이 역시 두가지 인자를 줘서 시행한다. 하나는 글자를 숨기는 거고 또 다른 것은 숫자 1000ms을 넣어 진행한다 이는 1초 뒤에 글자가 숨겨진다는 것을 의미합니다.
+
 ex)
  setTimeout(() => {
         boomText1.style.display = 'none'; // 글자 숨기기
     }, 1000);
 
 5. 이후, 다시 이벤트 발생할 때 숨겨진 글자가 다시 나타나게끔 하는데 이전에 설정했던 boomText1.style.display = 'none'의 none 부분을 block으로 설정해서 글자가 다시 나타날 수 있게끔 했습니다.
+
 ex)
 boomText1.style.display = 'block'; 이렇게 설정한다.
 
