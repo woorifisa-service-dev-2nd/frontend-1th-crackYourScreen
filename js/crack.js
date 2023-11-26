@@ -16,8 +16,8 @@ function insertImageOneClickCenter(event) {
     const imageSize = 500; // 예: 이미지 크기를 50x50으로 설정
 
     // 이미지의 중앙 위치 계산
-    const imageX = clickX - imageSize / 2 -90;
-    const imageY = clickY - imageSize / 2 -1;
+    const imageX = clickX - imageSize / 2 -50;
+    const imageY = clickY - imageSize / 2 + 50;
 
     // 이미지의 위치와 스타일을 설정합니다.
     image.style.position = 'absolute';
@@ -49,8 +49,8 @@ function insertImageTwoClickCenter(event) {
     const imageSize = 500; // 예: 이미지 크기를 50x50으로 설정
 
     // 이미지의 중앙 위치 계산
-    const imageX = clickX - imageSize / 2 -80;
-    const imageY = clickY - imageSize / 2 -40;
+    const imageX = clickX - imageSize / 2;
+    const imageY = clickY - imageSize / 2 + 50;
 
     // 이미지의 위치와 스타일을 설정합니다.
     image.style.position = 'absolute';
