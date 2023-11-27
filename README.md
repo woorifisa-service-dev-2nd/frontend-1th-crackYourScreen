@@ -100,7 +100,7 @@ const imageY = clickY - imageSize / 2 + 50;
 
 #### 4-2. BANG!! 텍스트 삽입
 
-- innerHTML()을 활용해서 bang!!! 이라는 텍스트 추가
+- innerHTML 을 활용해서 bang!!! 이라는 텍스트 추가
 
 - 텍스트 크기를 1.2배 증가시켰다가 원래 크기로 변경
 
