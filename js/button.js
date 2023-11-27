@@ -25,7 +25,11 @@ inputImage.addEventListener('change', (e) => {
     const selectFiles = inputImage.files;
     
     // 파일 유효성 확인
-    checkValidation(selectFiles);
+    const isValid = checkValidation(selectFiles);
+
+    if (!isValid) {
+        return;
+    }
     
     const imageFile = selectFiles[0];
     
@@ -60,7 +64,7 @@ function removeCracks() {
 function checkValidation(files) {
     if (files.length != 1) {
         alert('하나의 파일을 선택하세요.');
-        return;
+        return false;
     }
     
     const ALLOW_EXTENSIONS_LOWER_CASE = ['jpg', 'jpeg', 'png', 'gif'];
@@ -69,10 +73,11 @@ function checkValidation(files) {
     const extension = file.type.split('/').pop().toLowerCase();
      
     if (ALLOW_EXTENSIONS_LOWER_CASE.includes(extension)) {
-        return;
+        return true;
     }
     
     alert(`지원하는 확장자(${ALLOW_EXTENSIONS_LOWER_CASE.join(", ")})가 아닙니다.`);
+    return false;
 }
 
 /**
