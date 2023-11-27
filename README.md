@@ -51,9 +51,9 @@
   <img src="https://github.com/woorifisa-service-dev-2nd/frontend-2th-crackYourScreen/assets/101613808/d04810f5-5b22-4a20-81b9-078ae62504c5">
 </p>
 
-``Math.random()``으로 0에서1사이의 부동소수점 난수를 생성하고 배열의 길이를 곱한 뒤
-``Math.floor()``로 소수점을 제거하면 랜덤으로 0부터 배열의 길이값중 하나를 반환합니다.
-선택된 이미지의 경로를 HTML 엘리먼트의 src 속성에 할당하여 해당 이미지를 표시합니다.
+- 배경이미지 경로를 배열로 선언
+- 출력이 필요할때 난수를 생성해서 랜덤으로 인덱싱
+- 선택된 이미지의 경로를 img 태그의 src 속성에 할당하여 해당 이미지를 표시합니다.
 
 <br>
 
@@ -63,8 +63,9 @@
   <img src="https://github.com/woorifisa-service-dev-2nd/frontend-2th-crackYourScreen/assets/101613808/c35f7352-9451-4ab8-b553-7199db11ff17">
 </p>
 
-input 태그에서 사용자가 선택한 파일을 ``File`` 객체로 가져와 이미지가 맞는지 확장자 유효성 검사를 합니다.
-이미지 파일이 맞으면 ``FileReader`` 객체로 파일 내용을 읽어 해당 이미지를 표시합니다.
+- input 태그에서 사용자가 선택한 파일을 ``File`` 객체로 가져오기 
+- 이미지가 맞는지 확장자 유효성 검사
+- 이미지 파일이 맞으면 ``FileReader`` 객체로 파일 내용을 읽어 해당 이미지 표시
 
 <br>
 
@@ -73,7 +74,9 @@ input 태그에서 사용자가 선택한 파일을 ``File`` 객체로 가져와
   <img src="https://github.com/woorifisa-service-dev-2nd/frontend-2th-crackYourScreen/assets/101613808/d3790252-d8ed-4e4a-affc-e29f37cf51f8">
 </p>
 
-마우스 호버가 적용되는 DOM은 실제 HTML 태그가 보이지 않는 가상 클래스이기 때문에 ``getElementBy~()``로 객체를 불러오고 CSS ``cursor``속성을 바꾸는 구현은 어려워, ``document`` 객체 내에서 마우스를 움직이는 이벤트가 발생하면 이미지가 따라오도록 하는 방식으로 구현하였습니다.
+- 마우스 호버가 적용되는 DOM은 실제 HTML 태그가 보이지 않는 가상 클래스 
+   -  ``getElementBy~()``로 선택 불가
+- ``document`` 객체 내에서 마우스를 움직이는 이벤트가 발생하면 이미지가 따라오도록 구현
 
 <br>
 
@@ -83,35 +86,28 @@ input 태그에서 사용자가 선택한 파일을 ``File`` 객체로 가져와
 </p>
 
 #### 4-1. 클릭 crack 이미지 삽입
-한 번 클릭시 작은 크기, 더블 클릭 시 큰 크기의 crack 이미지를 삽입합니다.
-
-
-클릭한 좌표를 가져오고 좌표와 이미지 크기를 고려해 이미지가 중앙에 오도록 합니다.
-
+- 한 번 클릭시 작은 크기, 더블 클릭 시 큰 크기의 crack 이미지를 삽입
+  - ``document.body.appendChild(image);`` 사용
+- 클릭한 좌표를 가져오고 좌표와 이미지 크기를 고려해 이미지 중앙 배치
 
 ```js
 // 그림 형태에 따라 정확도를  높이기 위해 넣어준 값 '50'
 const imageX = clickX - imageSize / 2 - 50;
-const imageY = clickY - imageSize / 2 + 50; 
+const imageY = clickY - imageSize / 2 + 50;
 ```
-
-``document.body.appendChild(image);``를 사용해 이벤트 발생시 body안에 이미지가 삽입 되게 합니다.
-
-
-더블 클릭 이벤트 핸들러도 만들어 콜백 함수를 바꿔 설정합니다.
 
 <br>
 
 #### 4-2. BANG!! 텍스트 삽입
 
-객체를 가져와 innerHTML을 활용해서 bang!!! 이라는 단어를 추가합니다.
+- innerHTML()을 활용해서 bang!!! 이라는 텍스트 추가
 
-그리고 기존 설정해뒀던 bang의 크기를 1.2배 증가시키는 작업을 합니다.
+- 텍스트 크기를 1.2배 증가시켰다가 원래 크기로 변경
 
 ``const newSize = (parseFloat(currentSize) * 1.2) + 'px';`` 
 
 
-그 다음 원래 크기로 바꾸는 작업을 합니다. 이때 함수에 지연시간 인수를 주어 애니메이션 효과가 나타납니다.
+- 함수에 0.2초 지연시간 인수를 주어 애니메이션 효과
 
 ```js
 setTimeout(() => {
@@ -119,7 +115,8 @@ setTimeout(() => {
     }, 200); // 200ms이므로 0.2초만 커졌다가 작아진다.
 ```
 
- 비슷한 방식으로 글자가 일정시간 뒤 사라지게 하고
+- 일정시간 뒤 텍스트 숨기기
+  - 다시 출력할 때 ``boomText1.style.display = 'block';``
 
 ```js
 setTimeout(() => {
@@ -127,20 +124,17 @@ setTimeout(() => {
     }, 1000);
 ```
 
-이후, 다시 이벤트 발생할 때 none으로 설정했던 부분을 block으로 설정해서 글자가 다시 나타날 수 있게끔 했습니다.
-
-``boomText1.style.display = 'block';``
-
 <br>
 
 ## 🔫 트러블 슈팅
 ### 1. Git 사용
-git 에 미숙하여 git을 통해 서로 작성한 부분을 합치는데 어려움이 있었습니다.
+git 에 미숙하여 git을 통해 서로 작성한 부분을 합치는데 어려움이 있었습니다. <br>
+팀원들 모두 검색해서 이해한 사람이 설명해주는 방식으로 사용하였습니다.
 
 <br>
 
 ### 2. 마우스 포인터 변경
-마우스 커서 이미지는 원본의 크기가 너무 크면 나타나지 않는 문제가 있었습니다.
+마우스 커서 이미지는 원본의 크기가 너무 크면 나타나지 않는 문제가 있었습니다. <br>
 원본 이미지를 이미지 크기 조절 사이트에서 크기를 줄여 사용했습니다.
 
 <br>
