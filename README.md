@@ -5,7 +5,17 @@
   <img src = "https://github.com/woorifisa-service-dev-2nd/frontend-2th-crackYourScreen/assets/101613808/192abf21-79c3-483e-8ec5-a51844445fbe">
 </p>
 
+## **Are you get stressed out? Then Try this one!🔨**
 
+#### You can break **Whatever you want.**
+
+On the left of the screen, There is a **NEW Hammer** Button that you can change your mouse cursor.
+On the right of the scree, There are **RESET** Button and **SELECT** Button.
+You can change background picture randomly By click the **RESET** Button.
+And you can select own picture to replace the background Picture by click the **SELECT** Button.
+
+<br>
+<hr>
 <br>
 <br>
 
